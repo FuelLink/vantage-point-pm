@@ -31,33 +31,48 @@ export default function Navbar() {
             <Image
               src="/vantage_point_logo.png"
               alt="Vantage Point Property Management"
-              height={56}
-              width={140}
-              className="h-14 w-auto object-contain"
+              height={72}
+              width={180}
+              className="h-18 w-auto object-contain"
               priority
             />
           </Link>
 
           {/* Center Menu */}
           <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-            {['Properties', 'Services', 'About', 'Contact'].map((item) => (
-              <Link 
-                key={item} 
-                href="#" 
-                className="text-sm font-medium text-brand-black/70 hover:text-brand-black transition-colors"
-              >
-                {item}
-              </Link>
-            ))}
+            <Link
+              href="#"
+              className="text-lg font-medium text-brand-black/70 hover:text-brand-black transition-colors"
+            >
+              Properties
+            </Link>
+            <Link
+              href="#services"
+              className="text-lg font-medium text-brand-black/70 hover:text-brand-black transition-colors"
+            >
+              Services
+            </Link>
+            <Link
+              href="/contact"
+              className="text-lg font-medium text-brand-black/70 hover:text-brand-black transition-colors"
+            >
+              Contact
+            </Link>
+            <Link
+              href="#"
+              className="text-lg font-medium text-brand-black/70 hover:text-brand-black transition-colors"
+            >
+              About
+            </Link>
           </div>
 
           {/* Right CTA */}
           <div className="flex-shrink-0">
-            <Link 
-              href="#" 
-              className="bg-brand-black text-white px-6 py-2.5 rounded-full text-sm font-medium hover:scale-105 active:scale-95 transition-all duration-200 shadow-lg shadow-brand-black/20"
+            <Link
+              href="#"
+              className="bg-brand-black text-white px-7 py-3 rounded-full text-base font-medium hover:scale-105 active:scale-95 transition-all duration-200 shadow-lg shadow-brand-black/20"
             >
-              Get Started
+              Resident Log In
             </Link>
           </div>
         </div>

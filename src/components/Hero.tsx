@@ -5,7 +5,7 @@ import { ArrowRight, PlayCircle, Star } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-center pt-28 pb-12 overflow-hidden bg-white">
+    <section className="relative min-h-[90vh] flex flex-col justify-center pt-28 pb-12 overflow-hidden bg-brand-warm-50">
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 w-full z-10">
         
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
@@ -38,14 +38,14 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex flex-wrap gap-4 items-center mb-10"
             >
-              <button className="flex items-center gap-2 bg-brand-black text-white px-8 py-3.5 rounded-full font-medium text-sm hover:bg-brand-orange hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-brand-black/20 hover:shadow-brand-orange/25 group">
+              <a href="#proposal" className="flex items-center gap-2 bg-brand-black text-white px-8 py-3.5 rounded-full font-medium text-sm hover:bg-brand-orange hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-brand-black/20 hover:shadow-brand-orange/25 group">
                 Request a Proposal
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </button>
-              <button className="flex items-center gap-2 px-8 py-3.5 rounded-full font-medium text-sm text-brand-black border border-brand-gray-200 hover:bg-brand-gray-50 hover:scale-105 active:scale-95 transition-all duration-200">
+              </a>
+              <a href="#services" className="flex items-center gap-2 px-8 py-3.5 rounded-full font-medium text-sm text-brand-black border border-brand-gray-200 hover:bg-brand-gray-50 hover:scale-105 active:scale-95 transition-all duration-200">
                 <PlayCircle className="w-4 h-4" />
                 Our Services
-              </button>
+              </a>
             </motion.div>
 
           </div>
