@@ -41,13 +41,7 @@ export default function Navbar() {
           {/* Center Menu */}
           <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
             <Link
-              href="#"
-              className="text-lg font-medium text-brand-black/70 hover:text-brand-black transition-colors"
-            >
-              Properties
-            </Link>
-            <Link
-              href="#services"
+              href="/#services"
               className="text-lg font-medium text-brand-black/70 hover:text-brand-black transition-colors"
             >
               Services

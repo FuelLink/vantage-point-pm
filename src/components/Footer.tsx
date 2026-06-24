@@ -18,7 +18,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-brand-gray-500 text-sm leading-relaxed max-w-sm mb-8">
-              Full-service HOA and multi-family property management serving Idaho&apos;s Treasure Valley. We relieve boards of administrative burdens while building beautiful communities.
+              Full-service HOA and multi-family property management serving Washington&apos;s Puget Sound. We relieve boards of administrative burdens while building beautiful communities through honest, proactive management you can count on.
             </p>
             <div className="flex gap-3">
               <Link
@@ -50,10 +50,9 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <h4 className="font-semibold mb-6 text-white">Services</h4>
             <ul className="space-y-4 text-sm text-brand-gray-500">
-              <li><Link href="#" className="hover:text-brand-orange transition-colors">HOA Management</Link></li>
-              <li><Link href="#" className="hover:text-brand-orange transition-colors">Multi-Family</Link></li>
-              <li><Link href="#" className="hover:text-brand-orange transition-colors">Financial Services</Link></li>
-              <li><Link href="#" className="hover:text-brand-orange transition-colors">Maintenance</Link></li>
+              <li><Link href="/#services" className="hover:text-brand-orange transition-colors">Residential HOA Management</Link></li>
+              <li><Link href="/#services" className="hover:text-brand-orange transition-colors">Condominium Management</Link></li>
+              <li><Link href="/#services" className="hover:text-brand-orange transition-colors">Financial Services</Link></li>
             </ul>
           </div>
 

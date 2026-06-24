@@ -19,8 +19,8 @@ export default function Hero() {
               transition={{ duration: 0.6 }}
               className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-brand-black leading-[1.1] mb-6"
             >
-              Better communities, <br />
-              <span className="text-brand-gray-500">stronger investments.</span>
+              Proactive and <br />
+              <span className="text-brand-gray-500">Transparent Management</span>
             </motion.h1>
 
             <motion.p
@@ -29,7 +29,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-lg text-brand-gray-500 max-w-xl leading-relaxed mb-8"
             >
-              Full-service HOA and multi-family property management for Idaho&apos;s Treasure Valley. We handle the heavy lifting—board support, financial oversight, and community maintenance—so you don&apos;t have to.
+              We combine proven expertise with innovative technology through honest, proactive management you can count on. Every decision we make is rooted in integrity and professionalism, with a commitment to keeping you informed every step of the way.
             </motion.p>
 
             <motion.div 

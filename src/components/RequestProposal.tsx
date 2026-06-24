@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 
 const serviceTypes = [
   "HOA",
-  "Residential",
+  "Condo",
   "Other"
 ];
 
@@ -86,7 +86,7 @@ export default function RequestProposal() {
                 id="phone"
                 name="phone"
                 className="w-full px-4 py-3 rounded-xl border border-brand-gray-200 focus:outline-none focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition-all"
-                placeholder="(208) 555-0123"
+                placeholder="(123) 456-7890"
               />
             </div>
             <div>

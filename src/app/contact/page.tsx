@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 
 const serviceTypes = [
   "HOA",
-  "Residential",
+  "Condo",
   "Other"
 ];
 
@@ -50,7 +50,7 @@ export default function ContactPage() {
                 Vantage Point Property Management
               </h2>
               <p className="text-lg text-brand-gray-500 mb-10 leading-relaxed">
-                Full-service HOA and multi-family property management serving Idaho&apos;s Treasure Valley. We handle the details so you can focus on what matters most.
+                Full-service HOA and Condominium property management company serving Washington&apos;s Puget Sound region. We handle the details so you can focus on what matters most.
               </p>
 
               <div className="space-y-6">
@@ -61,8 +61,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-brand-black mb-1">Office Location</h3>
                     <p className="text-brand-gray-500">
-                      Boise, Idaho<br />
-                      Treasure Valley Area
+                      Arlington, Washington<br />
+                      Puget Sound
                     </p>
                   </div>
                 </div>
@@ -74,8 +74,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-brand-black mb-1">Phone</h3>
                     <p className="text-brand-gray-500">
-                      <a href="tel:+12085550123" className="hover:text-brand-orange transition-colors">
-                        (208) 555-0123
+                      <a href="tel:+18883328986" className="hover:text-brand-orange transition-colors">
+                        (888) 332-8986
                       </a>
                     </p>
                   </div>
@@ -88,8 +88,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-brand-black mb-1">Email</h3>
                     <p className="text-brand-gray-500">
-                      <a href="mailto:info@vantagepointpm.com" className="hover:text-brand-orange transition-colors">
-                        info@vantagepointpm.com
+                      <a href="mailto:info@vantageppm.com" className="hover:text-brand-orange transition-colors">
+                        info@vantageppm.com
                       </a>
                     </p>
                   </div>
@@ -176,7 +176,7 @@ export default function ContactPage() {
                         id="phone"
                         name="phone"
                         className="w-full px-4 py-3 rounded-xl border border-brand-gray-200 focus:outline-none focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition-all bg-white"
-                        placeholder="(208) 555-0123"
+                        placeholder="(123) 456-7890"
                       />
                     </div>
                   </div>

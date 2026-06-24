@@ -1,32 +1,32 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Building2, BarChart3, Users2, ShieldCheck } from 'lucide-react';
+import { Building2, BarChart3, Users2, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 const services = [
   {
     category: "HOA Management",
-    title: "Community Association Management",
-    description: "Comprehensive HOA management that protects property values and builds thriving communities. We provide board guidance, CC&R enforcement, meeting coordination, and act as the primary liaison between your association and homeowners.",
-    tags: ["Board Support", "CC&R Enforcement", "Annual Meetings"],
+    title: "Residential HOA Management",
+    description: "Residential homeowners association (HOA) property management streamlines the administration of single-family housing communities by enforcing community guidelines, managing budgets, and coordinating vendor services. We maintain your shared neighborhood amenities like parks, pools, and common landscaping to ensure the neighborhood remains safe, attractive, and highly valued. By serving as an objective partner to the HOA board, we help foster a cohesive, well-run community where residents can enjoy a high quality of life.",
+    tags: ["Maintenance", "CC&R Enforcement", "Annual Meetings"],
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1600&auto=format&fit=crop",
     link: "#"
   },
   {
-    category: "Multi-Family",
-    title: "Apartment & Complex Management",
-    description: "Full-service management for apartment communities, condominiums, and townhome complexes. From tenant acquisition and retention to grounds preservation, we create a sense of community that cuts vacancy rates and maximizes rental income.",
-    tags: ["Tenant Screening", "Community Building", "Maintenance"],
+    category: "Condominium",
+    title: "Condominium Management",
+    description: "Condominium property management bridges the gap between condo boards and residents by overseeing the day-to-day operations, financial health, and upkeep of a shared community. Management teams handle everything from routine maintenance and vendor contracts to budgeting, reserve fund planning, and bylaws enforcement to protect property values. Ultimately, our goal is to ensure a seamless, well-maintained living environment so that owners can enjoy their homes worry-free.",
+    tags: ["Property Management", "Project Management", "Maintenance"],
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
     link: "#"
   },
   {
     category: "Financial Services",
-    title: "Transparent Financial Oversight",
-    description: "Professional bookkeeping, monthly financial statements, budget preparation, and dues collection. Our 24/7 owner portal provides real-time access to financial reports, and we coordinate tax returns and lien preparation when necessary.",
-    tags: ["Online Portal", "Budget Planning", "Collections"],
+    title: "Financial Services",
+    description: "Our financial management secures the long-term fiscal health of your community through budget development and tracking, tax preparation and audits, and preparing your reserve studies for compliance. We streamline day-to-day transactions by providing homeowners with a secure portal for seamless, reliable assessment collections. By managing the numbers with precision, we give your board a clear, transparent road map for the future.",
+    tags: ["Online Portal", "Budget Planning", "Compliance"],
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1600&auto=format&fit=crop",
     link: "#"
   }
@@ -82,13 +82,6 @@ export default function Services() {
                         {tag}
                       </span>
                     ))}
-                  </div>
-
-                  <div className="pt-4">
-                    <a href={service.link} className="inline-flex items-center gap-2 text-brand-black font-semibold text-lg hover:text-brand-orange transition-colors group/link">
-                      View details
-                      <ArrowRight className="w-5 h-5 group-hover/link:translate-x-1 transition-transform" />
-                    </a>
                   </div>
                 </div>
 
