@@ -11,7 +11,7 @@ const services = [
     title: "Residential HOA Management",
     description: "Residential homeowners association (HOA) property management streamlines the administration of single-family housing communities by enforcing community guidelines, managing budgets, and coordinating vendor services. We maintain your shared neighborhood amenities like parks, pools, and common landscaping to ensure the neighborhood remains safe, attractive, and highly valued. By serving as an objective partner to the HOA board, we help foster a cohesive, well-run community where residents can enjoy a high quality of life.",
     tags: ["Maintenance", "CC&R Enforcement", "Annual Meetings"],
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1600&auto=format&fit=crop",
+    image: "/images/service-hoa.jpg",
     link: "#"
   },
   {
@@ -19,7 +19,7 @@ const services = [
     title: "Condominium Management",
     description: "Condominium property management bridges the gap between condo boards and residents by overseeing the day-to-day operations, financial health, and upkeep of a shared community. Management teams handle everything from routine maintenance and vendor contracts to budgeting, reserve fund planning, and bylaws enforcement to protect property values. Ultimately, our goal is to ensure a seamless, well-maintained living environment so that owners can enjoy their homes worry-free.",
     tags: ["Property Management", "Project Management", "Maintenance"],
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
+    image: "/images/service-condominium.jpg",
     link: "#"
   },
   {
@@ -27,7 +27,7 @@ const services = [
     title: "Financial Services",
     description: "Our financial management secures the long-term fiscal health of your community through budget development and tracking, tax preparation and audits, and preparing your reserve studies for compliance. We streamline day-to-day transactions by providing homeowners with a secure portal for seamless, reliable assessment collections. By managing the numbers with precision, we give your board a clear, transparent road map for the future.",
     tags: ["Online Portal", "Budget Planning", "Compliance"],
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1600&auto=format&fit=crop",
+    image: "/images/service-financial.jpg",
     link: "#"
   }
 ];
@@ -88,14 +88,14 @@ export default function Services() {
                 {/* Image Side */}
                 <div className="flex-1 w-full">
                   <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
-                    {/* Placeholder for Next.js Image - using img for now to avoid config setup for external domains in this snippet, 
-                        but in real app would config next.config.js */}
-                    <img 
-                      src={service.image} 
+                    <Image
+                      src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-cover transform group-hover:scale-105 transition-transform duration-700"
                     />
-                    
+
                     {/* Overlay gradient */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>

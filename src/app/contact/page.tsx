@@ -1,9 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { ArrowRight, MapPin, Phone, Mail, Clock, CheckCircle2, Loader2 } from 'lucide-react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { useFormSubmit } from '@/hooks/useFormSubmit';
 
 const serviceTypes = [
   "HOA",
@@ -11,7 +13,11 @@ const serviceTypes = [
   "Other"
 ];
 
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? '';
+
 export default function ContactPage() {
+  const { status, phone, onPhoneChange, recaptchaRef, handleSubmit } = useFormSubmit('contact');
+
   return (
     <main className="min-h-screen bg-white selection:bg-brand-orange/20 selection:text-brand-orange-dark">
       <Navbar />
@@ -124,29 +130,31 @@ export default function ContactPage() {
                   Fill out the form below and we&apos;ll get back to you within 24 hours.
                 </p>
 
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} noValidate className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-brand-black mb-2">
-                        Name
+                        Name <span className="text-brand-orange">*</span>
                       </label>
                       <input
                         type="text"
                         id="name"
                         name="name"
                         required
+                        autoComplete="name"
                         className="w-full px-4 py-3 rounded-xl border border-brand-gray-200 focus:outline-none focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition-all bg-white"
                         placeholder="Your name"
                       />
                     </div>
                     <div>
                       <label htmlFor="community" className="block text-sm font-medium text-brand-black mb-2">
-                        Community Name
+                        Community Name <span className="text-brand-gray-500 font-normal">(optional)</span>
                       </label>
                       <input
                         type="text"
                         id="community"
                         name="community"
+                        autoComplete="organization"
                         className="w-full px-4 py-3 rounded-xl border border-brand-gray-200 focus:outline-none focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition-all bg-white"
                         placeholder="Your community or property"
                       />
@@ -156,25 +164,34 @@ export default function ContactPage() {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-brand-black mb-2">
-                        Email
+                        Email <span className="text-brand-orange">*</span>
                       </label>
                       <input
                         type="email"
                         id="email"
                         name="email"
                         required
+                        autoComplete="email"
+                        autoCapitalize="none"
+                        autoCorrect="off"
+                        spellCheck={false}
                         className="w-full px-4 py-3 rounded-xl border border-brand-gray-200 focus:outline-none focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition-all bg-white"
                         placeholder="you@example.com"
                       />
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-brand-black mb-2">
-                        Phone
+                        Phone <span className="text-brand-orange">*</span>
                       </label>
                       <input
                         type="tel"
                         id="phone"
                         name="phone"
+                        required
+                        inputMode="tel"
+                        autoComplete="tel"
+                        value={phone}
+                        onChange={onPhoneChange}
                         className="w-full px-4 py-3 rounded-xl border border-brand-gray-200 focus:outline-none focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition-all bg-white"
                         placeholder="(123) 456-7890"
                       />
@@ -183,7 +200,7 @@ export default function ContactPage() {
 
                   <div>
                     <label htmlFor="service" className="block text-sm font-medium text-brand-black mb-2">
-                      Service Type
+                      Service Type <span className="text-brand-orange">*</span>
                     </label>
                     <select
                       id="service"
@@ -202,24 +219,50 @@ export default function ContactPage() {
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-brand-black mb-2">
-                      Message
+                      Message <span className="text-brand-orange">*</span>
                     </label>
                     <textarea
                       id="message"
                       name="message"
                       rows={4}
+                      required
                       className="w-full px-4 py-3 rounded-xl border border-brand-gray-200 focus:outline-none focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition-all bg-white resize-none"
                       placeholder="Tell us about your property management needs..."
                     />
                   </div>
 
-                  <button
-                    type="submit"
-                    className="w-full flex items-center justify-center gap-2 bg-brand-black text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-brand-orange hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-lg shadow-brand-black/20 hover:shadow-brand-orange/25 group"
-                  >
-                    Send Message
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
-                  </button>
+                  {status === 'success' ? (
+                    <div className="flex items-center justify-center gap-3 bg-brand-warm-100 text-brand-black rounded-2xl px-6 py-5 text-center">
+                      <CheckCircle2 className="w-6 h-6 text-brand-orange flex-shrink-0" />
+                      <p className="font-medium">
+                        Thanks! Your message has been sent. We&apos;ll get back to you within 24 hours.
+                      </p>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="flex justify-center">
+                        <ReCAPTCHA ref={recaptchaRef} sitekey={RECAPTCHA_SITE_KEY} />
+                      </div>
+
+                      <button
+                        type="submit"
+                        disabled={status === 'submitting'}
+                        className="w-full flex items-center justify-center gap-2 bg-brand-black text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-brand-orange hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-lg shadow-brand-black/20 hover:shadow-brand-orange/25 disabled:opacity-60 disabled:hover:scale-100 disabled:cursor-not-allowed group"
+                      >
+                        {status === 'submitting' ? (
+                          <>
+                            Sending
+                            <Loader2 className="w-5 h-5 animate-spin" />
+                          </>
+                        ) : (
+                          <>
+                            Send Message
+                            <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
+                          </>
+                        )}
+                      </button>
+                    </>
+                  )}
                 </form>
               </div>
             </motion.div>

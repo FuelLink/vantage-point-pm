@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Linkedin, Facebook } from 'lucide-react';
+import { Linkedin, Facebook, MapPin, Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
     <footer className="bg-brand-black text-white py-20 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+          {/* Brand */}
           <div className="col-span-1 md:col-span-5">
             <Link href="/" className="inline-block mb-8">
               <Image
@@ -20,79 +21,74 @@ export default function Footer() {
             <p className="text-brand-gray-500 text-sm leading-relaxed max-w-sm mb-8">
               Full-service HOA and multi-family property management serving Washington&apos;s Puget Sound. We relieve boards of administrative burdens while building beautiful communities through honest, proactive management you can count on.
             </p>
+            {/* Social profiles use the vantageppm handle as a placeholder — update URLs once the accounts are live */}
             <div className="flex gap-3">
-              <Link
-                href="#"
+              <a
+                href="https://www.linkedin.com/company/vantageppm"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-orange hover:text-white transition-colors flex items-center justify-center text-brand-gray-500"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
-              </Link>
-              <Link
-                href="#"
+              </a>
+              <a
+                href="https://x.com/vantageppm"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-orange hover:text-white transition-colors flex items-center justify-center text-brand-gray-500"
                 aria-label="X (Twitter)"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
-              </Link>
-              <Link
-                href="#"
+              </a>
+              <a
+                href="https://www.facebook.com/vantageppm"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-orange hover:text-white transition-colors flex items-center justify-center text-brand-gray-500"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
-              </Link>
+              </a>
             </div>
           </div>
 
-          <div className="col-span-1 md:col-span-2">
-            <h4 className="font-semibold mb-6 text-white">Services</h4>
-            <ul className="space-y-4 text-sm text-brand-gray-500">
-              <li><Link href="/#services" className="hover:text-brand-orange transition-colors">Residential HOA Management</Link></li>
-              <li><Link href="/#services" className="hover:text-brand-orange transition-colors">Condominium Management</Link></li>
-              <li><Link href="/#services" className="hover:text-brand-orange transition-colors">Financial Services</Link></li>
-            </ul>
-          </div>
-
-          <div className="col-span-1 md:col-span-2">
-            <h4 className="font-semibold mb-6 text-white">Company</h4>
-            <ul className="space-y-4 text-sm text-brand-gray-500">
-              <li><Link href="#" className="hover:text-brand-orange transition-colors">About Us</Link></li>
-              <li><Link href="#" className="hover:text-brand-orange transition-colors">Board Portal</Link></li>
-              <li><Link href="#" className="hover:text-brand-orange transition-colors">Homeowner Portal</Link></li>
-              <li><Link href="#" className="hover:text-brand-orange transition-colors">Contact</Link></li>
-            </ul>
-          </div>
-
+          {/* Explore */}
           <div className="col-span-1 md:col-span-3">
-            <h4 className="font-semibold mb-6 text-white">Newsletter</h4>
-            <p className="text-sm text-brand-gray-500 mb-4">
-              Subscribe for community management insights and updates.
-            </p>
-            <div className="flex gap-2">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-brand-orange w-full"
-              />
-              <button className="bg-brand-orange text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-brand-orange-dark transition-colors">
-                Join
-              </button>
-            </div>
+            <h4 className="font-semibold mb-6 text-white">Explore</h4>
+            <ul className="space-y-4 text-sm text-brand-gray-500">
+              <li><Link href="/#services" className="hover:text-brand-orange transition-colors">Services</Link></li>
+              <li><Link href="/#proposal" className="hover:text-brand-orange transition-colors">Request a Proposal</Link></li>
+              <li><Link href="/contact" className="hover:text-brand-orange transition-colors">Contact</Link></li>
+            </ul>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="col-span-1 md:col-span-4">
+            <h4 className="font-semibold mb-6 text-white">Get in Touch</h4>
+            <ul className="space-y-4 text-sm text-brand-gray-500">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
+                <span>Arlington, Washington<br />Puget Sound</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-brand-orange flex-shrink-0" />
+                <a href="tel:+18883328986" className="hover:text-brand-orange transition-colors">(888) 332-8986</a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-brand-orange flex-shrink-0" />
+                <a href="mailto:info@vantageppm.com" className="hover:text-brand-orange transition-colors">info@vantageppm.com</a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-white/10 pt-8 flex justify-center">
           <p className="text-brand-gray-500 text-sm">
-            &copy; {new Date().getFullYear()} Vantage Point Property Management.
+            &copy; {new Date().getFullYear()} Vantage Point Property Management. All rights reserved.
           </p>
-          <div className="flex gap-8 text-sm text-brand-gray-500">
-            <Link href="#" className="hover:text-white transition-colors">Privacy</Link>
-            <Link href="#" className="hover:text-white transition-colors">Terms</Link>
-            <Link href="#" className="hover:text-white transition-colors">Cookies</Link>
-          </div>
         </div>
       </div>
     </footer>

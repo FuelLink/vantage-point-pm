@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, PlayCircle, Star } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowRight, PlayCircle } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -59,32 +60,38 @@ export default function Hero() {
           >
              {/* Background Image */}
              <div className="absolute inset-0">
-                <img 
-                    src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop" 
-                    alt="Luxury Interior"
-                    className="w-full h-full object-cover mix-blend-overlay opacity-40"
+                <Image
+                    src="/images/hero-interior.jpg"
+                    alt=""
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover mix-blend-overlay opacity-40"
+                    aria-hidden="true"
                 />
              </div>
 
              {/* Main Focal Image (Floating Circle/Shape idea from salad bowl reference, adapted to building/interior) */}
              <div className="relative w-[85%] h-[85%] rounded-[2rem] overflow-hidden shadow-2xl shadow-brand-black/20 transform hover:scale-[1.02] transition-transform duration-700">
-                <img 
-                    src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1600&auto=format&fit=crop" 
-                    alt="Modern Living Space"
-                    className="w-full h-full object-cover"
+                <Image
+                    src="/images/hero-living-space.jpg"
+                    alt="Modern living space managed by Vantage Point"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 85vw, 42vw"
+                    className="object-cover"
                 />
              </div>
 
              {/* Floating Bottom Bar - Stats */}
-             <div className="absolute bottom-10 left-10 right-10">
-                <div className="bg-white p-4 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex items-center justify-between">
-                    <div>
-                        <h3 className="font-bold text-brand-black text-sm">Riverside Commons HOA</h3>
-                        <p className="text-xs text-brand-gray-500">124 Units Managed</p>
+             <div className="absolute bottom-4 left-4 right-4 md:bottom-10 md:left-10 md:right-10">
+                <div className="bg-white p-4 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex items-center justify-between gap-3">
+                    <div className="min-w-0">
+                        <h3 className="font-bold text-brand-black text-sm truncate">Riverside Commons HOA</h3>
+                        <p className="text-xs text-brand-gray-500 truncate">124 Units Managed</p>
                     </div>
-                    <div className="flex items-center gap-3">
-                        <span className="font-bold text-brand-black text-lg">98%<span className="text-xs text-brand-gray-400 font-normal"> satisfaction</span></span>
-                        <button className="w-8 h-8 bg-brand-black rounded-full flex items-center justify-center text-white hover:bg-brand-orange transition-colors">
+                    <div className="flex items-center gap-3 flex-shrink-0">
+                        <span className="font-bold text-brand-black text-lg whitespace-nowrap">98%<span className="text-xs text-brand-gray-400 font-normal"> satisfaction</span></span>
+                        <button className="w-8 h-8 bg-brand-black rounded-full flex items-center justify-center text-white hover:bg-brand-orange transition-colors flex-shrink-0">
                             <ArrowRight className="w-4 h-4" />
                         </button>
                     </div>
